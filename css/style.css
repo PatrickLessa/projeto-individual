@@ -52,7 +52,7 @@ body{
 }
 
 .content{
-    text-align: center;
+    text-align: left;
 }
 
 #bandas h1, #sobre h1, #contato h1, #albuns h1, .modal h1{
@@ -120,6 +120,10 @@ body{
     color: #fff;
 }
 
+.item-menu i:hover{
+    color: #fff;
+}
+
 .light, .light a{
     color: #fff;
 }
@@ -167,6 +171,7 @@ body{
     width: 50%;
     margin-bottom: 3%;
     margin-top: 10%;
+    text-align: center;
 }
 
 /* Bandas */
@@ -316,7 +321,7 @@ body{
     padding: 5px;
 }
 
-.contact input, .input-login{
+.contact input, .input-login, .input-pub{
     width: 100%;
     height: 30px;
     border: none;
@@ -342,7 +347,6 @@ body{
 }
 
 #contato .content{
-    font-size: 20px;
     width: 40%;
     height: 100%;
     border-left: 3px solid #fff;
@@ -403,6 +407,16 @@ body{
     justify-content: center;
 }
 
+.tela #close{
+    position: absolute;
+    top: 10%;
+    right: 3%;
+    font-size: 50px;
+    text-decoration: none;
+    color: var(--colorPrimary);
+    font-family: var(--fontSlayer);
+}
+
 .modal{
     width: 25%;
     border-radius: 10px;
@@ -432,7 +446,7 @@ body{
     margin-top: 15px;
 }
 
-.btn-login{
+.btn-flutua{
     position: absolute;
     bottom: 0;
     position: fixed;
@@ -450,43 +464,46 @@ body{
 }
 
 .noticia-p{
-    width: 900px;
+    width: 60%;
     height: 600px;
     overflow: hidden;
+    position: relative;
 }
 
-.img-p{
+.noticia-p img{
     width: 100%;
     height: 100%;
-    background-image: url(../img/imgP.jpg);
-    background-size: cover;
+    object-fit: cover;
+    filter: brightness(0.6);
     transition: transform .2s;
 }
 
-.img-p:hover{
+.noticia-p img:hover{
     transform: scale(1.1);
 }
 
-.noticia-p .opacidade{
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
+.noticia-p .conteudo{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
 }
 
 .title-p{
     width: 100%;
     font-size: 40px;
-    margin-bottom: 5%;
-    text-align: center;
+    margin-bottom: 3%;
 }
 
-.resum-p{
+.resum-p .content{
+    width: 80%;
     font-size: 25px;
-    margin-bottom: 1%;
+    margin-bottom: 3%;
+    text-align: left;
 }
 
 .sub-noticia{
-    width: 450px;
+    width: 30%;
     height: 600px;
     margin-left: 5%;
     
@@ -499,6 +516,11 @@ body{
     transition: .2s;
     display: flex;
     align-items: flex-end;
+    overflow: hidden;
+}
+
+.sub .opacidade{
+    padding: 15px;
 }
 
 .sub:hover{
@@ -513,6 +535,52 @@ body{
 #sub2{
     background-image: url(../img/anthrax.jpg);
     background-size: cover;
+}
+
+.feed{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.materia{
+    width: 100%;
+    height: 200px;
+    margin-top: 2%;
+    margin-left: 4%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.lista{
+    width: 30%;
+}
+
+.lista .info{
+    margin-bottom: 5%;
+}
+
+.materia .info span{
+    margin-top: 3%;
+}
+
+#materias{
+    margin-top: 3%;
+}
+
+#materias .container{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post button{
+    border-radius: 90px;
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
 }
 
 

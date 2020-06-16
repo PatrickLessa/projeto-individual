@@ -2,7 +2,6 @@ const target = document.querySelectorAll('[data-anime]')
 const animationClass = 'animate'
 const lightOn = 'light'
 const menu = document.querySelectorAll('li.item-menu')
-const sections = document.querySelectorAll('section.sessoes')
 
 function animacaoScroll() {
     const windowTop = window.pageYOffset + ((window.innerHeight + 3) / 2)
