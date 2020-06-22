@@ -40,6 +40,12 @@ body{
     cursor: pointer;
 }
 
+.btn-wrong{
+    background-color: #b60000;
+    color: #818181;
+    cursor: default;
+}
+
 .flex{
     display: flex;
     align-items: center;
@@ -61,11 +67,11 @@ body{
     font-family: var(--fontSlayer);
 }
 
-#sobre, #bandas, #home{
+#sobre, #bandas, #albuns, #home{
     margin-bottom: 13%;
 }
 
-#contato, #albuns{
+#contato{
     margin-bottom: 5%;
 }
 
@@ -191,6 +197,7 @@ body{
 }
 
 .textBox{
+    height: 150px;
     padding: 15px;
     text-align: center;
 }
@@ -436,7 +443,7 @@ body{
     width: 60%;
 }
 
-.input-login{
+.input-login, .input-pub{
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: var(--colorSecondary);
@@ -445,6 +452,46 @@ body{
 .login form .btn{
     margin-top: 15px;
 }
+
+#modal_post{
+    width: 50%;
+}
+
+.create-post form{
+    display: flex;
+    flex-direction: column;
+}
+
+.create-post form .row{
+    display: flex;
+    flex-direction: row;
+}
+
+.create-post form .row .cow{
+    width: 48%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.create-post form textarea{
+    background-color: var(--colorSecondary);
+    resize: none;
+    width: 100%;
+}
+
+.cancel{
+    margin-right: 2%;
+}
+
+#resum-post{
+    height: 30%;
+}
+
+#text-post{
+    height: 100%;
+}
+
+/* button flutua */
 
 .btn-flutua{
     position: absolute;
@@ -581,6 +628,11 @@ body{
     width: 60px;
     height: 60px;
     font-size: 40px;
+}
+
+/*validação input*/
+.input-wrong{
+    border-bottom: 4px solid var(--colorPrimary);
 }
 
 

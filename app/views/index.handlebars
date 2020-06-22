@@ -1,0 +1,267 @@
+<div class="header">
+    <div class="container">
+        <div class="logo">
+            thrash<span class="light"> wiki</span>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li class="item-menu light"><a href="#home">home</a></li>
+                <li class="item-menu"><a href="#bandas">bandas</a></li>
+                <li class="item-menu"><a href="#albuns">playlists</a></li>
+                <li class="item-menu"><a href="#sobre">sobre</a></li>
+                <li class="item-menu"><a href="#contato">contato</a></li>
+                <button class="btn" onclick="modal_cadastro()">Seja Membro</button>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section id="home" class="sessoes">
+    <div id="imgHome" data-anime="left">
+        <img src="img/img-home.jpg" alt="">
+    </div>
+
+    <div class="content" data-anime="right">
+        Tudo o que você quer saber das suas bandas favoritas,
+        novos albuns, singles e EP's do mais bom e old skool
+        Trash Metal raíz e entre outros estilos de Metal?<br>
+        Você encontra aqui no <span class="font"><span class="lightOff font">Thrash</span> WIKI</span>
+        <div class="btn-home">
+            <button class="btn">Veja mais</button>
+        </div>
+    </div>
+
+</section>
+
+<section id="bandas" class="sessoes">
+    <h1>Bandas</h1>
+    <div class="container flex">
+
+        <div class="box" data-anime="top">
+            <img src="img/megadeth.jpg" alt="" class="imgBox">
+            <div class="textBox">
+                <h3 class="font">Megadeth</h3>
+                Após a saída de Dave Mustaine do Metallica
+                Dave se revoltou e disse que iria "esmagar" a banda anterior. Então surgiu
+                uma das maiores bandas de Metal, o Megadeth 
+            </div>
+            <div class="spotify flex">
+                <a href=""><i class="fab fa-spotify fa-3x"></i></a>
+                <h3>Ouça no Spotify</h3>
+            </div>
+        </div>
+
+        <div class="box" data-anime="bottom">
+            <img src="img/slayer.jpg" alt="" class="imgBox">
+            <div class="textBox">
+                <h3 class="font">Slayer</h3>
+                No mesmo ano do Metallica, Slayer também soltou seu primeiro
+                disco que foi uma pedrada para os cristãos, o famigerado e 
+                diabólico Show No Mercy
+            </div>
+            <div class="spotify flex">
+                <a href=""><i class="fab fa-spotify fa-3x"></i></a>
+                <h3>Ouça no Spotify</h3>
+            </div>
+        </div>
+
+        <div class="box" data-anime="top">
+            <img src="img/metallica.png" alt="" class="imgBox">
+            <div class="textBox">
+                <h3 class="font">Metallica</h3>
+                Banda californiana que deu origem ao Thrash Metal em 1983
+                com o famoso e "pedrada" Kill 'Em All, se tornou uma, senão 
+                a maior banda de Metal do mundo.
+            </div>
+            <div class="spotify flex">
+                <a href=""><i class="fab fa-spotify fa-3x"></i></a>
+                <h3>Ouça no Spotify</h3>
+            </div>
+
+        </div>
+
+        <div class="box" data-anime="bottom">
+            <img src="img/sepultura.jpg" alt="" class="imgBox">
+
+            <div class="textBox">
+                <h3 class="font">Sepultura</h3>
+                O Sepultura representa o Brasil com seu pesado Death e Thrash Metal
+                desde 1984 com origem em Belo Horizonte que contava no inicio com os 
+                polemicos Irmãos Cavalera.
+            </div>
+            <div class="spotify flex">
+                <a href=""><i class="fab fa-spotify fa-3x"></i></a>
+                <h3>Ouça no Spotify</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="albuns" data-anime="left">
+    <h1>Playlists</h1>
+    <div class="container">
+        <div class="slider">
+            <div class="window flex">
+                <i class="fas fa-chevron-left fa-5x" onclick="prox()"></i>
+                <div class="capa" id='capinha'>
+                    <div class="opacidade">
+                        <div class="content">As mais ouvidas do album</div>
+                    </div>
+                </div>
+
+                <div class="songs" id="songs-js"></div>
+                <i class="fas fa-chevron-right fa-5x" onclick="prox()"></i>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="sobre" class="sessoes" data-anime="right">
+    <h1>Sobre</h1>
+
+    <div class="container flex">
+
+        <div class="card-item">
+            <i class="fas fa-music fa-5x"></i>
+            <p>
+                Como amantes da música, nos sentimos no dever de compartilhar ela com voçê
+            </p>
+        </div>
+
+        <div class="card-item">
+            <i class="fas fa-record-vinyl fa-5x"></i>
+            <p>
+                Tudo sobre o mundo do metal oferemos a você com muito amor e HEADBANGER
+            </p>
+        </div>
+
+        <div class="card-item">
+            <i class="fas fa-tv fa-5x"></i>
+            <p>
+                Fique por dentro dos shows, turnês e lives da sua banda favorita
+            </p>
+        </div>
+
+    </div>
+
+    </div>
+</section>
+
+<section id="contato" class="sessoes">
+    <h1>Contato</h1>
+    <br><br><br>
+    <div class="container flex">
+
+        <div class="contact">
+
+            <form action="">
+
+                <div class="row">
+                    <div class="cow">
+                        <input type="text" class="input-contact" placeholder="Nome">
+                    </div>
+
+                    <div class="cow">
+                        <input type="text" class="input-contact" placeholder="Sobrenome">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <input type="email" class="input-contact" placeholder="email">
+                </div>
+
+                <div class="row">
+                    <input type="text" class="input-contact" placeholder="Mensagem">
+                </div>
+
+                <div class="row">
+                    <button type="submit" class="btn">Enviar</button>
+                </div>
+
+
+            </form>
+
+        </div>
+
+        <div class="content">
+            Alguma sugestão, agradecimentos ou reclamação? Entre em contato conosco, estaremos sempre atentos!
+        </div>
+    </div>
+</section>
+
+<section id="footer">
+    <div class="container">
+        <div class="cow">
+            <span><i class="fab fa-instagram"></i> @thrash_wiki</span>
+            <span><i class="fab fa-facebook-square"></i> Thrash Wiki</span>
+            <span><i class="fas fa-envelope"></i> thrash_wiki@gmail.com</span>
+        </div>
+
+        <div class="cow">
+            <span>Termos de Licença</span>
+            <span>Cookies</span>
+            <span>R. Anhengabau, 789</span>
+        </div>
+
+    </div>
+
+    <span id="copy">&COPY;Todos os direitos reservados 2020</span>
+    <span id="memorian">Em memória de Carlos Teixeira (1962-2020)</span>
+
+</section>
+
+
+<div class="tela" id="tela_opaca">
+    <a id="close" href="#" onclick="close_modal()">X</a>
+    <div class="modal" id="modal_login">
+        <div class="login">
+            <h1>Login</h1>
+            <form action="/controllerLogin" name="form-login" method="POST">
+                <input onblur="validaLogin('#userLogin')" type="text" id="userLogin" name="userLogin" class="input-login" placeholder="usuario">
+                <input onblur="validaLogin('#pwdLogin')" type="password" id="pwdLogin" name="pwdLogin" class="input-login" placeholder="senha">
+                <span><Em><a href="">Esqueci minha senha</a></Em></span>
+                <button id="btnLogin" type="submit" class="btn btn-wrong" disabled="disabled">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal_cadastro">
+        <div class="login">
+            <h1>Cadastro</h1>
+            <form action="/controllerCadastro" name="form-cadastro" method="POST">
+                <input type="text" name="nome" id="nome" class="input-login" placeholder="Nome">
+                <input type="text" name="user" id="user" class="input-login" placeholder="usuario">
+                <input type="email" name="email" id="email" class="input-login" placeholder="E-mail">
+                <input type="password" name="pwd" id="pwd" class="input-login" placeholder="senha">
+                <input type="password" class="input-login" placeholder="confirmar senha">
+                <button type="submit" name="btnCadastro" id="btnCadastro" class="btn">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="btn-flutua">
+    <button class="btn" onclick="modal_login()">Login</button>
+</div>
+
+<script src="/js/animationScroll.js"></script>
+<script src="/js/animationMenu.js"></script>
+<script src="/js/playlist.js"></script>
+<script src="/js/validaLogin.js"></script>
+
+<script>
+    if (sessionStorage.getItem("sessao")) {
+        window.location.href = '/feed/' + sessionStorage.getItem("sessao")
+    }
+
+    let status = '{{ msg }}'
+
+    switch (status) {
+        case 'errLogin':
+            alert('Usuario ou senha inválidos')
+            window.history.pushState("", "", "/")
+            break;
+    }
+</script>

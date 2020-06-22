@@ -1,0 +1,12 @@
+<p>Aguarde...</p>
+<script>
+    let verify = '{{data}}'
+    if (verify) {
+        {{#data}}
+        sessionStorage.setItem("sessao", "{{codUser}}")
+        window.location.href = '/feed/{{codUser}}'
+        {{/data}}
+    } else{
+        window.location.href = '/errLogin'
+    }
+</script>
