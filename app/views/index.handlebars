@@ -222,7 +222,7 @@
                 <input onblur="validaLogin('#userLogin')" type="text" id="userLogin" name="userLogin" class="input-login" placeholder="usuario">
                 <input onblur="validaLogin('#pwdLogin')" type="password" id="pwdLogin" name="pwdLogin" class="input-login" placeholder="senha">
                 <span><Em><a href="">Esqueci minha senha</a></Em></span>
-                <button id="btnLogin" type="submit" class="btn btn-wrong" disabled="disabled">Entrar</button>
+                <button id="btnLogin" type="submit" class="btn btn-wrong" disabled="true">Entrar</button>
             </form>
         </div>
     </div>
@@ -231,12 +231,22 @@
         <div class="login">
             <h1>Cadastro</h1>
             <form action="/controllerCadastro" name="form-cadastro" method="POST">
-                <input type="text" name="nome" id="nome" class="input-login" placeholder="Nome">
-                <input type="text" name="user" id="user" class="input-login" placeholder="usuario">
-                <input type="email" name="email" id="email" class="input-login" placeholder="E-mail">
-                <input type="password" name="pwd" id="pwd" class="input-login" placeholder="senha">
-                <input type="password" class="input-login" placeholder="confirmar senha">
-                <button type="submit" name="btnCadastro" id="btnCadastro" class="btn">Cadastrar</button>
+                <input onblur="validaCadastro('#nome', '#nomeErr')" type="text" name="nome" id="nome" class="input-login" placeholder="Nome">
+                <span id="nomeErr" class="err"></span>
+
+                <input onblur="validaCadastro('#user', '#userErr')" type="text" name="user" id="user" class="input-login" placeholder="usuario">
+                <span id="userErr" class="err"></span>
+
+                <input onblur="validaCadastro('#email', '#emailErr')" type="email" name="email" id="email" class="input-login" placeholder="E-mail">
+                <span id="emailErr" class="err"></span>
+
+                <input onblur="validaCadastro('#pwdCadastro', '#pwdCadastroErr')"type="password" name="pwd" id='pwdCadastro' class="input-login" placeholder="senha">
+                <span id="pwdCadastroErr" class="err"></span>
+
+                <input onblur="validaCadastro('#pwdCadastroConfirma', '#pwdCadastroConfirmaErr')"type="password" id="pwdCadastroConfirma" class="input-login" placeholder="confirmar senha">
+                <span id="pwdCadastroConfirmaErr" class="err"></span>
+                
+                <button type="submit" name="btnCadastro" id="btnCadastro" class="btn btn-wrong" disabled="true">Cadastrar</button>
             </form>
         </div>
     </div>
@@ -249,7 +259,7 @@
 <script src="/js/animationScroll.js"></script>
 <script src="/js/animationMenu.js"></script>
 <script src="/js/playlist.js"></script>
-<script src="/js/validaLogin.js"></script>
+<script src="/js/validaIndex.js"></script>
 
 <script>
     if (sessionStorage.getItem("sessao")) {

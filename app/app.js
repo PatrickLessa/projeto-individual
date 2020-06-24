@@ -27,16 +27,24 @@ app.get('/:status?', function (req, res) {
     // console.log(req.params.id)
 })
 
-app.get('/feed/:id', function (req, res) {
+app.get('/feed/:id/:idPost?', function (req, res) {
+    let user;
+    let postModal;
     sql.query("select * from tbuser where codUser = ?", [req.params.id], function (err, results, fields) {
-        res.render('feed', { data: results })
+        user = results;
+    })
+    sql.query("select * from tbPost where codPost = ?", [req.params.idPost], function(err, results, fields){
+        postModal = results;
+    })
+    sql.query("select * from tbPost order by codPost desc", function(err, results, fields){
+        res.render('feed', { posts: results, usuario: user, materia: postModal});
     })
 })
 
 app.post('/controllerCadastro', urlencodeParser, function (req, res) {
     sql.query("insert into tbUser values (null,?,?,?,?)", [
-        req.body.nome,
         req.body.user,
+        req.body.nome,
         req.body.email,
         req.body.pwd
     ])
@@ -44,6 +52,17 @@ app.post('/controllerCadastro', urlencodeParser, function (req, res) {
         res.render('controllerCadastro', { data: results })
     })
     // console.log(req.body.user)
+})
+
+app.post('/controllerPost/:id', urlencodeParser, function(req, res){
+    sql.query("insert into tbPost values (null, ?,?,?,?,?)", [
+        req.body.title,
+        req.body.resumPost,
+        req.body.textPost,
+        req.body.imgPost,
+        req.params.id
+    ])
+    res.render('controllerPost', {cod: req.params.id})
 })
 
 app.post('/controllerLogin', urlencodeParser, function (req, res) {

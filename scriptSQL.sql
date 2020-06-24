@@ -11,16 +11,19 @@ create table tbUser(
 
 create table tbPost(
 	codPost int primary key auto_increment
-    , title varchar(35)
-    , resum varchar(70) 
+    , title varchar(200)
+    , resum text 
     , pub text
+    , caminhoFoto varchar(50)
     , fkUser int
     , foreign key (fkUser) references tbUser(codUser)
 );
 
-create table tbPhoto(
-	codPhoto int primary key auto_increment
-    , wayPhoto varchar(30)
-    , fkPost int
-    , foreign key (fkPost) references tbPost(codPost)
-);
+desc tbPost;
+
+insert into tbPost(title, resum, pub, caminhoFoto, fkUser)
+values
+	('Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet consectetur ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nostrum
+                        magnam, distinctio fugiat facilis, explicabo temporibus libero hic quod, earum alias natus pariatur dolor! Quam praesentium itaque qui.', 'noMercy.jpg', 13);
+			
+select * from tbPost order by codPost desc;

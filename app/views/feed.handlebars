@@ -6,7 +6,7 @@
 
         <div class="menu">
             <ul>
-                <li class="item-menu"><a href="#">Ola {{#data}}{{nomeUser}}{{/data}}</a></li>
+                <li class="item-menu"><a href="#">Ola {{#usuario}}{{nomeUser}}{{/usuario}}</a></li>
                 <li class="item-menu"><a href="#" onclick="sair()"><i class="fas fa-sign-out-alt"></i></a></li>
             </ul>
         </div>
@@ -59,39 +59,18 @@
 <section id="materias">
     <div class="container">
         <div class="feed">
-            <div class="materia">
-                <img src="../img/metallica.png" alt="">
+            {{#posts}}
+            <div class="materia" id="materia{{codPost}}">
+                <img id="{{caminhoFoto}}" src="../img/{{caminhoFoto}}" alt="">
                 <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                    <span class="resum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nostrum
-                        magnam,
-                        distinctio fugiat facilis, explicabo temporibus libero hic quod,
-                        earum alias natus pariatur dolor! Quam praesentium itaque qui.</span>
+                    <span class="title" onclick="open_materia({{codPost}})">{{title}}</span>
+                    <span class="resum">{{resum}}</span>
                     <span class="hour">1 Hora Atras</span>
                 </div>
+                <span id="text" style="display: none;">{{pub}}</span>
             </div>
-            <div class="materia">
-                <img src="../img/metallica.png" alt="">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                    <span class="resum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nostrum
-                        magnam,
-                        distinctio fugiat facilis, explicabo temporibus libero hic quod,
-                        earum alias natus pariatur dolor! Quam praesentium itaque qui.</span>
-                    <span class="hour">1 Hora Atras</span>
-                </div>
-            </div>
-            <div class="materia">
-                <img src="../img/metallica.png" alt="">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                    <span class="resum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nostrum
-                        magnam,
-                        distinctio fugiat facilis, explicabo temporibus libero hic quod,
-                        earum alias natus pariatur dolor! Quam praesentium itaque qui.</span>
-                    <span class="hour">1 Hora Atras</span>
-                </div>
-            </div>
+            
+            {{/posts}}
         </div>
         <div class="lista">
 
@@ -139,33 +118,45 @@
 </section>
 
 <div class="tela" id="tela_opaca">
-    <a id="close" href="#" onclick="close_modal()">X</a>
+    <a id="close" href="" onclick="close_modal()">X</a>
     <div class="modal" id="modal_post">
         <div class="create-post">
             <h1>Postagem</h1>
-            <form action="">
+            {{#usuario}}
+            <form action="/controllerPost/{{codUser}}" method="POST">
                 <div class="row">
                     <div class="cow">
-                        <input type="text" id="title" class="input-pub" placeholder="Título">
-                        <input type="text" id="sub-title" class="input-pub" placeholder="Sub-titulo">
+                        <input type="text" id="title" name="title" class="input-pub" placeholder="Título">
                         <label for="resum-post">Resumo: </label>
-                        <textarea name="resum-post" id="resum-post" cols="30" rows="10" class="text-pub"></textarea>
+                        <textarea name="resumPost" id="resumPost" cols="30" rows="10" class="text-pub"></textarea>
+                        <input type="file" name="imgPost" id="imgPost" class="input-pub", placeholder="imagem">
                     </div>
                     <div class="cow">
                         <label for="text-post">Texto:</label>
-                        <textarea name="text-post" id="text-post" cols="30" rows="10" class="text-pub"></textarea>
+                        <textarea name="textPost" id="textPost" cols="30" rows="10" class="text-pub"></textarea>
                     </div>
 
                 </div>
                 
 
                 <div class="row">
-                    <button class="btn cancel" onclick="close_modal()">Cancelar</button>
+                    <button class="btn cancel" type="button" onclick="close_modal()">Cancelar</button>
                     <button class="btn" type="submit">Publicar</button>
                 </div>
             </form>
+            {{/usuario}}
         </div>
         
+    </div>
+
+    <div class="modal" id="modalMateria">
+        <h2 id="titleModal"></h2>
+        <span id="resumModal"></span>
+        <hr>
+        <div class="container">
+            <img src="" alt="" id="imgModal">
+            <div class="content" id="textModal"></div>
+        </div>
     </div>
 </div>
 
@@ -173,13 +164,10 @@
     <button onclick="postagem()" class="btn">+</button>
 </div>
 
+<script src="/js/feed.js"></script>
 <script>
-    if(!sessionStorage.getItem("sessao")){
-        window.location.href = '/'
-    }
-
-    function sair(){
-        sessionStorage.clear()
-        window.location.href = '/'
+    let cod = Number({{#usuario}}{{codUser}}{{/usuario}})
+    if(Number(sessionStorage.getItem("sessao")) != cod){
+        sair()
     }
 </script>
