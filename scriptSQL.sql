@@ -27,3 +27,5 @@ values
                         magnam, distinctio fugiat facilis, explicabo temporibus libero hic quod, earum alias natus pariatur dolor! Quam praesentium itaque qui.', 'noMercy.jpg', 13);
 			
 select * from tbPost order by codPost desc;
+
+delete from tbPost	where codPost <= 4;

@@ -42,9 +42,12 @@
             <img src="img/megadeth.jpg" alt="" class="imgBox">
             <div class="textBox">
                 <h3 class="font">Megadeth</h3>
-                Após a saída de Dave Mustaine do Metallica
-                Dave se revoltou e disse que iria "esmagar" a banda anterior. Então surgiu
-                uma das maiores bandas de Metal, o Megadeth 
+                <div class="content">
+                    Após a saída de Dave Mustaine do Metallica
+                    Dave se revoltou e disse que iria "esmagar" a banda anterior. Então surgiu
+                    uma das maiores bandas de Metal, o Megadeth
+                </div>
+
             </div>
             <div class="spotify flex">
                 <a href=""><i class="fab fa-spotify fa-3x"></i></a>
@@ -56,9 +59,12 @@
             <img src="img/slayer.jpg" alt="" class="imgBox">
             <div class="textBox">
                 <h3 class="font">Slayer</h3>
-                No mesmo ano do Metallica, Slayer também soltou seu primeiro
-                disco que foi uma pedrada para os cristãos, o famigerado e 
-                diabólico Show No Mercy
+                <div class="content">
+                    No mesmo ano do Metallica, Slayer também soltou seu primeiro
+                    disco que foi uma pedrada para os cristãos, o famigerado e
+                    diabólico Show No Mercy
+                </div>
+
             </div>
             <div class="spotify flex">
                 <a href=""><i class="fab fa-spotify fa-3x"></i></a>
@@ -70,9 +76,12 @@
             <img src="img/metallica.png" alt="" class="imgBox">
             <div class="textBox">
                 <h3 class="font">Metallica</h3>
-                Banda californiana que deu origem ao Thrash Metal em 1983
-                com o famoso e "pedrada" Kill 'Em All, se tornou uma, senão 
-                a maior banda de Metal do mundo.
+                <div class="content">
+                    Banda californiana que deu origem ao Thrash Metal em 1983
+                    com o famoso e "pedrada" Kill 'Em All, se tornou uma, senão
+                    a maior banda de Metal do mundo.
+                </div>
+
             </div>
             <div class="spotify flex">
                 <a href=""><i class="fab fa-spotify fa-3x"></i></a>
@@ -86,9 +95,12 @@
 
             <div class="textBox">
                 <h3 class="font">Sepultura</h3>
-                O Sepultura representa o Brasil com seu pesado Death e Thrash Metal
-                desde 1984 com origem em Belo Horizonte que contava no inicio com os 
-                polemicos Irmãos Cavalera.
+                <div class="content">
+                    O Sepultura representa o Brasil com seu pesado Death e Thrash Metal
+                    desde 1984 com origem em Belo Horizonte que contava no inicio com os
+                    polemicos Irmãos Cavalera.
+                </div>
+
             </div>
             <div class="spotify flex">
                 <a href=""><i class="fab fa-spotify fa-3x"></i></a>
@@ -219,8 +231,10 @@
         <div class="login">
             <h1>Login</h1>
             <form action="/controllerLogin" name="form-login" method="POST">
-                <input onblur="validaLogin('#userLogin')" type="text" id="userLogin" name="userLogin" class="input-login" placeholder="usuario">
-                <input onblur="validaLogin('#pwdLogin')" type="password" id="pwdLogin" name="pwdLogin" class="input-login" placeholder="senha">
+                <input onblur="validaLogin('#userLogin')" type="text" id="userLogin" name="userLogin"
+                    class="input-login" placeholder="usuario">
+                <input onblur="validaLogin('#pwdLogin')" type="password" id="pwdLogin" name="pwdLogin"
+                    class="input-login" placeholder="senha">
                 <span><Em><a href="">Esqueci minha senha</a></Em></span>
                 <button id="btnLogin" type="submit" class="btn btn-wrong" disabled="true">Entrar</button>
             </form>
@@ -231,22 +245,28 @@
         <div class="login">
             <h1>Cadastro</h1>
             <form action="/controllerCadastro" name="form-cadastro" method="POST">
-                <input onblur="validaCadastro('#nome', '#nomeErr')" type="text" name="nome" id="nome" class="input-login" placeholder="Nome">
+                <input onblur="validaCadastro('#nome', '#nomeErr')" type="text" name="nome" id="nome"
+                    class="input-login" placeholder="Nome">
                 <span id="nomeErr" class="err"></span>
 
-                <input onblur="validaCadastro('#user', '#userErr')" type="text" name="user" id="user" class="input-login" placeholder="usuario">
+                <input onblur="validaCadastro('#user', '#userErr')" type="text" name="user" id="user"
+                    class="input-login" placeholder="usuario">
                 <span id="userErr" class="err"></span>
 
-                <input onblur="validaCadastro('#email', '#emailErr')" type="email" name="email" id="email" class="input-login" placeholder="E-mail">
+                <input onblur="validaCadastro('#email', '#emailErr')" type="email" name="email" id="email"
+                    class="input-login" placeholder="E-mail">
                 <span id="emailErr" class="err"></span>
 
-                <input onblur="validaCadastro('#pwdCadastro', '#pwdCadastroErr')"type="password" name="pwd" id='pwdCadastro' class="input-login" placeholder="senha">
+                <input onblur="validaCadastro('#pwdCadastro', '#pwdCadastroErr')" type="password" name="pwd"
+                    id='pwdCadastro' class="input-login" placeholder="senha">
                 <span id="pwdCadastroErr" class="err"></span>
 
-                <input onblur="validaCadastro('#pwdCadastroConfirma', '#pwdCadastroConfirmaErr')"type="password" id="pwdCadastroConfirma" class="input-login" placeholder="confirmar senha">
+                <input onblur="validaCadastro('#pwdCadastroConfirma', '#pwdCadastroConfirmaErr')" type="password"
+                    id="pwdCadastroConfirma" class="input-login" placeholder="confirmar senha">
                 <span id="pwdCadastroConfirmaErr" class="err"></span>
-                
-                <button type="submit" name="btnCadastro" id="btnCadastro" class="btn btn-wrong" disabled="true">Cadastrar</button>
+
+                <button type="submit" name="btnCadastro" id="btnCadastro" class="btn btn-wrong"
+                    disabled="true">Cadastrar</button>
             </form>
         </div>
     </div>
@@ -260,6 +280,7 @@
 <script src="/js/animationMenu.js"></script>
 <script src="/js/playlist.js"></script>
 <script src="/js/validaIndex.js"></script>
+<script src="/js/modalIndex.js"></script>
 
 <script>
     if (sessionStorage.getItem("sessao")) {

@@ -197,8 +197,13 @@ body{
 }
 
 .textBox{
-    height: 150px;
+    height: 30%;
     padding: 15px;
+    text-align: center;
+}
+
+.textBox .content{
+    height: 100%;
     text-align: center;
 }
 
@@ -473,10 +478,22 @@ body{
     margin-right: 10px;
 }
 
+.create-post form .row .cow img{
+    display: none;
+    width: 100px;
+    height: 100px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 .create-post form textarea{
     background-color: var(--colorSecondary);
     resize: none;
     width: 100%;
+}
+
+.create-post form .cow #textPost{
+    height: 100%;
 }
 
 .cancel{
@@ -598,12 +615,16 @@ body{
     margin-left: 4%;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
 }
 
 .materia img{
     width: 150px;
     height: 150px;
+}
+
+.materia .info{
+    padding: 0;
+    margin-left: 2%;
 }
 
 .materia .info .title{
@@ -627,6 +648,7 @@ body{
 }
 
 #materias{
+    margin-bottom: 3%;
     margin-top: 3%;
 }
 

@@ -118,18 +118,19 @@
 </section>
 
 <div class="tela" id="tela_opaca">
-    <a id="close" href="" onclick="close_modal()">X</a>
+    <a id="close" href="#" onclick="close_modal()">X</a>
     <div class="modal" id="modal_post">
         <div class="create-post">
             <h1>Postagem</h1>
             {{#usuario}}
-            <form action="/controllerPost/{{codUser}}" method="POST">
+            <form action="/controllerPost/{{codUser}}" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="cow">
                         <input type="text" id="title" name="title" class="input-pub" placeholder="Título">
                         <label for="resum-post">Resumo: </label>
                         <textarea name="resumPost" id="resumPost" cols="30" rows="10" class="text-pub"></textarea>
-                        <input type="file" name="imgPost" id="imgPost" class="input-pub", placeholder="imagem">
+                        <input onchange="preview()" type="file" name="imgPost" id="imgPost" class="input-pub", placeholder="imagem">
+                        <img src="" id="previewImg" alt="">
                     </div>
                     <div class="cow">
                         <label for="text-post">Texto:</label>
@@ -161,10 +162,11 @@
 </div>
 
 <div class="btn-flutua post">
-    <button onclick="postagem()" class="btn">+</button>
+    <button onclick="modal_postagem()" class="btn">+</button>
 </div>
 
 <script src="/js/feed.js"></script>
+<script src="/js/modalFeed.js"></script>
 <script>
     let cod = Number({{#usuario}}{{codUser}}{{/usuario}})
     if(Number(sessionStorage.getItem("sessao")) != cod){

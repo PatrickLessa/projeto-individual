@@ -2,8 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mysql = require('mysql')
 const handlebars = require('express-handlebars')
+const multer = require('multer')
 const app = express()
-const urlencodeParser = bodyParser.urlencoded({ extended: false })
+
+//config
 const sql = mysql.createConnection({
     host: 'localhost',
     user: 'patrick',
@@ -11,6 +13,18 @@ const sql = mysql.createConnection({
     port: '3306'
 })
 sql.query("use bdThrashWiki")
+const urlencodeParser = bodyParser.urlencoded({ extended: false })
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'img/')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '-' + file.originalname)
+    }
+
+})
+const upload = multer({ storage })
 
 app.engine("handlebars", handlebars({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -33,11 +47,11 @@ app.get('/feed/:id/:idPost?', function (req, res) {
     sql.query("select * from tbuser where codUser = ?", [req.params.id], function (err, results, fields) {
         user = results;
     })
-    sql.query("select * from tbPost where codPost = ?", [req.params.idPost], function(err, results, fields){
+    sql.query("select * from tbPost where codPost = ?", [req.params.idPost], function (err, results, fields) {
         postModal = results;
     })
-    sql.query("select * from tbPost order by codPost desc", function(err, results, fields){
-        res.render('feed', { posts: results, usuario: user, materia: postModal});
+    sql.query("select * from tbPost order by codPost desc", function (err, results, fields) {
+        res.render('feed', { posts: results, usuario: user, materia: postModal });
     })
 })
 
@@ -54,15 +68,16 @@ app.post('/controllerCadastro', urlencodeParser, function (req, res) {
     // console.log(req.body.user)
 })
 
-app.post('/controllerPost/:id', urlencodeParser, function(req, res){
+app.post('/controllerPost/:id', urlencodeParser, upload.single('imgPost'), function (req, res) {
     sql.query("insert into tbPost values (null, ?,?,?,?,?)", [
         req.body.title,
         req.body.resumPost,
         req.body.textPost,
-        req.body.imgPost,
+        req.file.filename,
         req.params.id
     ])
-    res.render('controllerPost', {cod: req.params.id})
+    console.log(req.file)
+    res.render('controllerPost', { cod: req.params.id })
 })
 
 app.post('/controllerLogin', urlencodeParser, function (req, res) {

@@ -28,3 +28,13 @@ function open_materia(cod){
     document.getElementById('modalMateria').style.display = 'flex'
     console.log(info)
 }
+
+function preview(){
+    const file = document.querySelector('#imgPost').files[0]
+    const fileReader = new FileReader()
+    fileReader.onloadend = function(){
+        document.querySelector('#previewImg').src = fileReader.result
+        document.querySelector('#previewImg').style.display = 'block'
+    }
+    fileReader.readAsDataURL(file)
+}
